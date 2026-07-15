@@ -1,0 +1,15 @@
+services:
+  agentic-qe:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    ports:
+      - "8080:8080"
+    env_file:
+      - ../app/.env
+    volumes:
+      - qe-data:/data
+    restart: unless-stopped
+
+volumes:
+  qe-data:

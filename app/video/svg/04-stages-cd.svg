@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="hero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="50%" stop-color="#1d3c83"/>
+      <stop offset="100%" stop-color="#23569a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="#f4f6f9"/>
+  
+    <rect width="1920" height="320" fill="url(#hero)"/>
+  <text x="64" y="72" fill="#66fcf9" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start">STAGES 05 – 08</text>
+  <text x="64" y="130" fill="#fff" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700" text-anchor="start">Publish, Automate &amp; Execute on INT</text>
+  <text x="64" y="175" fill="rgba(255,255,255,0.88)" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" text-anchor="start">XRay publication through CI execution and defect routing</text>
+    <rect x="64" y="380" width="420" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="64" y="380" width="420" height="6" rx="3" fill="#8ea523"/>
+  <text x="88" y="442" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" text-anchor="start">100%</text>
+  <text x="88" y="472" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">XRay traceability</text>
+  <text x="88" y="498" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">Approved TCs linked to Jira</text>
+    <rect x="520" y="380" width="420" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="520" y="380" width="420" height="6" rx="3" fill="#8ea523"/>
+  <text x="544" y="442" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" text-anchor="start">≥70%</text>
+  <text x="544" y="472" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">Automation candidates</text>
+  <text x="544" y="498" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">P1/P2 flagged for codegen</text>
+    <rect x="976" y="380" width="420" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="976" y="380" width="420" height="6" rx="3" fill="#8ea523"/>
+  <text x="1000" y="442" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" text-anchor="start">≥85%</text>
+  <text x="1000" y="472" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">First-pass PR approval</text>
+  <text x="1000" y="498" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">SDET code review gate</text>
+    <rect x="1432" y="380" width="420" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="1432" y="380" width="420" height="6" rx="3" fill="#d97706"/>
+  <text x="1456" y="442" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" text-anchor="start">0</text>
+  <text x="1456" y="472" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">Open P1/P2 at exit</text>
+  <text x="1456" y="498" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">Milestone #7 requirement</text>
+    <text x="960" y="580" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="middle">Outputs: XRay tests linked · Playwright PR · CI on asgard-int · Defects → PO Review</text>
+  
+  <text x="64" y="1050" fill="#64748b" font-family="Segoe UI" font-size="13">VikingCloud · VCPCORE Board 154 · Agentic QE Platform</text>
+</svg>

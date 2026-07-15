@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agentic QE Platform | VikingCloud</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">
+        VikingCloud
+        <span>Agentic QE Platform</span>
+      </div>
+      <select class="role-select" id="role-select">
+        <option>QE Lead</option>
+        <option>QA SME</option>
+        <option>SDET</option>
+        <option>Product Owner</option>
+        <option>Dev</option>
+        <option>QE Ops</option>
+      </select>
+      <div class="user-bar" id="user-bar" hidden>
+        <span class="user-name" id="user-name"></span>
+        <a class="user-signout" href="/auth/logout">Sign out</a>
+      </div>
+      <nav>
+        <a class="nav-item active" data-view="vcprocess">VC E2E Process</a>
+        <a class="nav-item" data-view="dashboard">Dashboard</a>
+        <a class="nav-item" data-view="stories">Jira Stories</a>
+        <a class="nav-item" data-view="review">Review Queue</a>
+        <a class="nav-item" data-view="testcases">Test Cases</a>
+        <a class="nav-item" data-view="defects">Defects</a>
+        <a class="nav-item" data-view="analysis">Analysis</a>
+        <a class="nav-item" data-view="cxo">CXO Report</a>
+        <a class="nav-item" data-view="lifecycle">Agile Lifecycle</a>
+        <a class="nav-item" data-view="raci">RACI Matrix</a>
+        <a class="nav-item" data-view="roi">Real-time ROI</a>
+        <a class="nav-item" data-view="integrations">Integrations</a>
+      </nav>
+    </aside>
+    <main class="main" id="main-content"></main>
+  </div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

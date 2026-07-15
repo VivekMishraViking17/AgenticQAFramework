@@ -1,0 +1,56 @@
+[
+  {
+    "id": "01-title",
+    "duration_hint": 8,
+    "caption": "VikingCloud Agentic QE Platform | VCPCORE Board 154 | CXO Briefing",
+    "narration": "Welcome to the VikingCloud Agentic Q E Platform. This is the VCPCORE Board 154, C X O end-to-end quality briefing for July 2026."
+  },
+  {
+    "id": "02-e2e",
+    "duration_hint": 16,
+    "caption": "Nine-stage Agentic QE lifecycle - Dev handoff to defect closure",
+    "narration": "Our nine-stage agentic lifecycle carries every story from Dev handoff through XRay publication, automation, execution, and defect closure. Each stage has defined inputs, outputs, stakeholders, and human quality gates."
+  },
+  {
+    "id": "03-stages-ab",
+    "duration_hint": 14,
+    "caption": "Stages 00-04: Handoff -> Intake -> Knowledge -> Design -> QA Review",
+    "narration": "Stages zero through four build the test foundation. Handoff confirms Definition of Done on INT. Intake parses acceptance criteria. Knowledge retrieval enriches context from Confluence. Design generates eight labeled test cases. QA S M E review is mandatory before publish."
+  },
+  {
+    "id": "04-stages-cd",
+    "duration_hint": 14,
+    "caption": "Stages 05-08: XRay -> Automation -> Codegen -> Execute",
+    "narration": "Stages five through eight deliver and validate. Approved tests publish to XRay and link to Jira. Automation scouts prioritize P1 and P2 candidates. Codegen produces Playwright pull requests. Execution on asgard-int files defects and routes to P O review."
+  },
+  {
+    "id": "05-cxo-kpi",
+    "duration_hint": 18,
+    "caption": "84% pass | 90% closure | 23 active defects | Conditional Go",
+    "narration": "Board 154 programme health: eighty-four percent core pass rate across five hundred seventy-one tests. Ninety percent bug closure - two hundred eight of two hundred thirty-one closed. Twenty-three active defects remain. Release decision: Conditional Go, pending checkout and JSIM header."
+  },
+  {
+    "id": "06-cxo-risk",
+    "duration_hint": 16,
+    "caption": "At risk: Checkout 44% | JSIM header 11% | Focus investment here",
+    "narration": "Core workstreams - U I redesign, JSIM pillars, and Scamnetic - are on track. Delivery risks concentrate in marketplace checkout at forty-four percent pass, and JSIM header standalone at eleven percent. C X O read: prioritize these two streams this sprint."
+  },
+  {
+    "id": "07-analysis",
+    "duration_hint": 14,
+    "caption": "3% escape rate | Pareto: UI Redesign + Checkout = 80% of defects",
+    "narration": "Defect analysis confirms a three percent escape rate - within our five percent target. Seven production escapes in ninety days. Pareto analysis shows U I Redesign and checkout account for eighty percent of defect volume. Full story-to-XRay-to-defect traceability is enforced."
+  },
+  {
+    "id": "08-milestones",
+    "duration_hint": 12,
+    "caption": "M#1 Engineering Smoke | M#7 QA Critical Path | M#12 UAT Kickoff",
+    "narration": "Programme milestone gates anchor the flow. Milestone one - engineering smoke on INT. Milestone seven - Q A critical path, test set X R sixteen two six nine must green. Milestone twelve - production dummy-merchant UAT kickoff."
+  },
+  {
+    "id": "09-close",
+    "duration_hint": 8,
+    "caption": "VikingCloud Agentic QE - Traceable, Measurable, Board-ready",
+    "narration": "VikingCloud Agentic Q E - traceable, measurable, and board-ready. Thank you."
+  }
+]

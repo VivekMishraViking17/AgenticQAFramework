@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agentic QE Framework — Presentation</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Segoe UI", Arial, sans-serif; background: #0d1117; color: #e6edf3; overflow: hidden; }
+    .deck { height: 100vh; position: relative; }
+    .slide {
+      display: none; height: 100vh; padding: 4rem 5rem;
+      flex-direction: column; justify-content: center;
+    }
+    .slide.active { display: flex; }
+    .slide.title-slide { background: #161b22; text-align: center; align-items: center; }
+    .slide.title-slide h1 { font-size: 3rem; color: #58a6ff; margin-bottom: 1rem; }
+    .slide.title-slide p { font-size: 1.25rem; color: #8b949e; }
+    h1 { font-size: 2.25rem; color: #58a6ff; margin-bottom: 2rem; border-bottom: 2px solid #30363d; padding-bottom: .75rem; }
+    ul { list-style: none; }
+    li { font-size: 1.35rem; padding: .6rem 0 .6rem 1.5rem; position: relative; line-height: 1.4; }
+    li::before { content: "▸"; position: absolute; left: 0; color: #3fb950; }
+    .nav { position: fixed; bottom: 1.5rem; right: 2rem; display: flex; gap: .75rem; z-index: 10; }
+    .nav button {
+      background: #21262d; border: 1px solid #30363d; color: #e6edf3;
+      padding: .5rem 1.25rem; border-radius: 6px; cursor: pointer; font-size: .9rem;
+    }
+    .nav button:hover { background: #58a6ff; color: #000; }
+    .counter { position: fixed; bottom: 1.75rem; left: 2rem; color: #8b949e; font-size: .85rem; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .phase-box { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1rem; margin: .35rem 0; font-size: 1rem; }
+    .phase-box strong { color: #58a6ff; }
+    kbd { background: #21262d; padding: .15rem .4rem; border-radius: 4px; font-size: .8rem; }
+  </style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <div class="slide title-slide active">
+    <h1>Agentic QE Framework</h1>
+    <p>End-to-End AI-Powered Quality Engineering</p>
+    <p style="margin-top:1rem">Cursor Agents · Jira · Confluence · XRay · Cypress/Playwright</p>
+    <p style="margin-top:2rem;font-size:.9rem">Press <kbd>→</kbd> or click Next · <kbd>F11</kbd> for fullscreen</p>
+  </div>
+
+  <div class="slide"><h1>Executive Summary</h1><ul>
+    <li>AI agents auto-generate labeled test cases from Jira stories (DOD + AC)</li>
+    <li>Context enriched from Confluence, PRDs, and customer bug history</li>
+    <li>QA SME review gate before XRay publication</li>
+    <li>Automation MCP generates Cypress/Playwright scripts</li>
+    <li>Defects auto-filed to Jira with full traceability</li>
+  </ul></div>
+
+  <div class="slide"><h1>Problem Statement</h1><ul>
+    <li>Manual TC authoring: 4–8 hours per story</li>
+    <li>Inconsistent coverage — security, edge, UAT often missed</li>
+    <li>Knowledge siloed across Jira, Confluence, PRDs, bugs</li>
+    <li>Automation backlog outpaces SDET capacity</li>
+    <li>Weak traceability: Story → TC → Automation → Defect</li>
+  </ul></div>
+
+  <div class="slide"><h1>Vision & Objectives</h1><ul>
+    <li>Accelerate: TC draft in &lt; 15 minutes per story</li>
+    <li>Broaden: Functional, NFR, security, data, edge, UAT coverage</li>
+    <li>Preserve: Mandatory human review at every critical step</li>
+    <li>Trace: 100% Jira → XRay → Automation → Defect</li>
+    <li>Measure: KPIs on cycle time, coverage, escapes</li>
+  </ul></div>
+
+  <div class="slide"><h1>8-Phase Lifecycle</h1>
+    <div class="two-col">
+      <div>
+        <div class="phase-box"><strong>01</strong> Story Intake — Story Context Agent</div>
+        <div class="phase-box"><strong>02</strong> Knowledge Retrieval — Knowledge Agent</div>
+        <div class="phase-box"><strong>03</strong> Test Design — Design + Security + UAT Agents</div>
+        <div class="phase-box"><strong>04</strong> QA SME Review — Review Orchestrator</div>
+      </div>
+      <div>
+        <div class="phase-box"><strong>05</strong> XRay Sync — XRay Sync Agent</div>
+        <div class="phase-box"><strong>06</strong> Automation Plan — Automation Scout</div>
+        <div class="phase-box"><strong>07</strong> Script Generation — Codegen Agent</div>
+        <div class="phase-box"><strong>08</strong> Execute & Defect — Execution + Triage</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide"><h1>Phase 1–2: Intake & Knowledge</h1><ul>
+    <li>Story Context Agent triggered when story is Ready for QA</li>
+    <li>Parses description, AC, DOD, labels, component, epic</li>
+    <li>Knowledge Agent: RAG over Confluence, PRDs, customer bugs</li>
+    <li>Builds unified context bundle for test design agents</li>
+    <li>Human gates: PO scope + SME source validation</li>
+  </ul></div>
+
+  <div class="slide"><h1>Phase 3: Multi-Agent Test Design</h1><ul>
+    <li>Test Design Agent: Functional, edge, data-centric, NFR</li>
+    <li>Security Test Agent: OWASP, auth boundaries, injection</li>
+    <li>UAT Agent: Business scenarios from PRD personas</li>
+    <li>Each TC: priority, component, source citation, auto flag</li>
+  </ul></div>
+
+  <div class="slide"><h1>Test Case Taxonomy</h1><ul>
+    <li><strong>functional</strong> — Core behavior per AC</li>
+    <li><strong>non-functional</strong> — Performance, reliability</li>
+    <li><strong>edge-case</strong> — Boundaries, empty states</li>
+    <li><strong>data-centric</strong> — CRUD, validation, migration</li>
+    <li><strong>security</strong> — AuthN/Z, IDOR, injection</li>
+    <li><strong>uat</strong> — Business acceptance flows</li>
+    <li><strong>accessibility</strong> · <strong>api-contract</strong> · <strong>regression</strong></li>
+  </ul></div>
+
+  <div class="slide"><h1>Phase 4: QA SME Review</h1><ul>
+    <li>Review Orchestrator: coverage matrix vs Acceptance Criteria</li>
+    <li>Checklist: 100% AC, all categories, no duplicates</li>
+    <li>Security cases for trust boundaries required</li>
+    <li>Peer sign-off for P1 stories</li>
+    <li>Reject → rework loop | Approve → XRay</li>
+  </ul></div>
+
+  <div class="slide"><h1>Phase 5: XRay Publication</h1><ul>
+    <li>XRay Sync Agent creates/updates tests via MCP</li>
+    <li>Links each test to Jira story</li>
+    <li>Applies taxonomy labels</li>
+    <li>QE Lead approves publish</li>
+    <li>Test plan version tagged for audit</li>
+  </ul></div>
+
+  <div class="slide"><h1>Phase 6–7: Automation</h1><ul>
+    <li>Automation Scout monitors XRay for approved tests</li>
+    <li>Prioritizes P1/P2 automation candidates</li>
+    <li>Codegen Agent: Cypress or Playwright scripts</li>
+    <li>Page objects, data-testid selectors, CI stage</li>
+    <li>SDET code review gate before merge</li>
+  </ul></div>
+
+  <div class="slide"><h1>Phase 8: Execution & Defects</h1><ul>
+    <li>Execution Agent: CI runs, artifacts, flake detection</li>
+    <li>Product failures → Defect Triage Agent</li>
+    <li>Jira bugs: auto-filed, component, severity labels</li>
+    <li>Links: XRay key, screenshot, stack trace</li>
+    <li>Dev triage: product defect vs test fragility</li>
+  </ul></div>
+
+  <div class="slide"><h1>MCP Integration Architecture</h1><ul>
+    <li>Cursor Orchestration Layer</li>
+    <li>Atlassian MCP — Jira, Confluence, JQL</li>
+    <li>XRay MCP — Test CRUD, story linking</li>
+    <li>Git/CI MCP — Repo, PR, pipeline</li>
+    <li>Test Framework MCP — Cypress/Playwright codegen</li>
+  </ul></div>
+
+  <div class="slide"><h1>6 Human Review Gates</h1><ul>
+    <li>PO scope confirmation (Definition of Ready)</li>
+    <li>SME source validation</li>
+    <li>QA SME test review (mandatory checklist)</li>
+    <li>QE Lead XRay publish approval</li>
+    <li>SDET prioritization & code review</li>
+    <li>Dev defect triage</li>
+  </ul></div>
+
+  <div class="slide"><h1>Measurables & KPIs</h1><ul>
+    <li>TC draft time: &lt; 15 min · AC coverage: 100%</li>
+    <li>SME turnaround: &lt; 1 day · XRay traceability: 100%</li>
+    <li>Automation (P1/P2): ≥ 70% · Codegen pass: ≥ 85%</li>
+    <li>Defect label accuracy: ≥ 95% · Flake rate: &lt; 3%</li>
+    <li>Escape defects: trend down QoQ</li>
+  </ul></div>
+
+  <div class="slide"><h1>Skills Matrix</h1><ul>
+    <li><strong>People:</strong> QE Lead, QA SME, SDET, PO + prompt engineering</li>
+    <li><strong>Process:</strong> DOR, RACI, change control, audit trail, SOP</li>
+    <li><strong>Technology:</strong> Cursor, Jira, Confluence, XRay, Cypress/Playwright, MCP</li>
+  </ul></div>
+
+  <div class="slide"><h1>Rollout Roadmap</h1><ul>
+    <li>Pilot (Wks 1–4): 1 squad, 10 stories, baseline</li>
+    <li>Integrate (Wks 5–10): XRay MCP, review automation</li>
+    <li>Automate (Wks 11–18): Codegen, CI, defect agent</li>
+    <li>Scale: All squads, prompt tuning, quarterly reviews</li>
+  </ul></div>
+
+  <div class="slide title-slide">
+    <h1>Next Steps</h1>
+    <p style="text-align:left;max-width:600px;margin:0 auto">
+      1. Identify pilot squad & 10 stories<br>
+      2. Configure Atlassian MCP & Jira fields<br>
+      3. Define prompt templates & TC labels<br>
+      4. Establish SME review roster<br>
+      5. Set baseline KPIs<br><br>
+      <strong style="color:#58a6ff">Questions?</strong>
+    </p>
+  </div>
+
+</div>
+
+<div class="counter" id="counter">1 / 18</div>
+<div class="nav">
+  <button onclick="prev()">← Prev</button>
+  <button onclick="next()">Next →</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  function show(n) {
+    slides[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    document.getElementById('counter').textContent = (current + 1) + ' / ' + slides.length;
+  }
+  function next() { show(current + 1); }
+  function prev() { show(current - 1); }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+    if (e.key === 'ArrowLeft') prev();
+  });
+</script>
+</body>
+</html>

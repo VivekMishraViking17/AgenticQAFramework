@@ -1,0 +1,11 @@
+# Secrets — never commit
+config/credentials.json
+.env
+*.local.json
+
+# Runtime data
+data.json
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="hero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="50%" stop-color="#1d3c83"/>
+      <stop offset="100%" stop-color="#23569a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="#f4f6f9"/>
+  
+    <rect width="1920" height="320" fill="url(#hero)"/>
+  <text x="64" y="72" fill="#66fcf9" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start">DEFECT ANALYSIS</text>
+  <text x="64" y="130" fill="#fff" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700" text-anchor="start">Escape Rate, Pareto &amp; Traceability</text>
+  <text x="64" y="175" fill="rgba(255,255,255,0.88)" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" text-anchor="start">Board 154 — last 90 days</text>
+    <rect x="64" y="340" width="420" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="64" y="340" width="420" height="6" rx="3" fill="#8ea523"/>
+  <text x="88" y="402" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" text-anchor="start">3%</text>
+  <text x="88" y="432" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">Escape rate</text>
+  <text x="88" y="458" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">Target ≤ 5% · 7 prod escapes</text>
+    <rect x="520" y="340" width="420" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="520" y="340" width="420" height="6" rx="3" fill="#8ea523"/>
+  <text x="544" y="402" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" text-anchor="start">14.9%</text>
+  <text x="544" y="432" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">QA reopen rate</text>
+  <text x="544" y="458" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">31 of 208 closed</text>
+    <rect x="976" y="340" width="420" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="976" y="340" width="420" height="6" rx="3" fill="#d97706"/>
+  <text x="1000" y="402" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" text-anchor="start">UI</text>
+  <text x="1000" y="432" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">Top impacted area</text>
+  <text x="1000" y="458" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">VCP UI Redesign</text>
+    <rect x="1432" y="340" width="420" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="1432" y="340" width="420" height="6" rx="3" fill="#8ea523"/>
+  <text x="1456" y="402" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" text-anchor="start">100%</text>
+  <text x="1456" y="432" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">E2E traceability</text>
+  <text x="1456" y="458" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">Story → XRay → Defect</text>
+    <text x="960" y="560" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Pareto: UI Redesign + Checkout = 80% of defect volume</text>
+    <text x="400" y="640" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="end">VCP UI Redesign</text>
+      <rect x="420" y="620" width="900" height="24" rx="4" fill="#e2e8f0"/>
+      <rect x="420" y="620" width="783" height="24" rx="4" fill="#1d3c83"/><text x="400" y="690" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="end">JSIM 3 Pillars</text>
+      <rect x="420" y="670" width="900" height="24" rx="4" fill="#e2e8f0"/>
+      <rect x="420" y="670" width="558" height="24" rx="4" fill="#1d3c83"/><text x="400" y="740" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="end">Marketplace checkout</text>
+      <rect x="420" y="720" width="900" height="24" rx="4" fill="#e2e8f0"/>
+      <rect x="420" y="720" width="297" height="24" rx="4" fill="#1d3c83"/>
+  
+  <text x="64" y="1050" fill="#64748b" font-family="Segoe UI" font-size="13">VikingCloud · VCPCORE Board 154 · Agentic QE Platform</text>
+</svg>

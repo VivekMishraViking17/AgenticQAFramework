@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agentic QE Framework — CXO Briefing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Inter", sans-serif;
+      background: #1a1f2b;
+      color: #101828;
+      overflow: hidden;
+    }
+    .deck { height: 100vh; }
+    .slide {
+      display: none; height: 100vh;
+      flex-direction: column; justify-content: center;
+      padding: 3rem 5rem;
+    }
+    .slide.active { display: flex; }
+
+    /* Slide 1 — hero */
+    .slide-hero {
+      background: linear-gradient(135deg, #1a1f2b 0%, #1d3c83 55%, #23569a 100%);
+      color: #fff;
+    }
+    .slide-hero .eyebrow {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: #66fcf9; margin-bottom: 1.5rem;
+    }
+    .slide-hero h1 {
+      font-family: "Poppins", sans-serif;
+      font-size: 3rem; font-weight: 700;
+      line-height: 1.15; max-width: 800px; margin-bottom: 2rem;
+    }
+    .slide-hero .cols {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;
+      max-width: 900px;
+    }
+    .slide-hero .col h3 {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.75rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #66fcf9;
+      margin-bottom: 0.75rem;
+    }
+    .slide-hero .col ul { list-style: none; }
+    .slide-hero .col li {
+      font-size: 1.05rem; padding: 0.4rem 0;
+      color: rgba(255,255,255,0.88);
+      padding-left: 1rem; position: relative;
+    }
+    .slide-hero .col li::before {
+      content: ""; position: absolute; left: 0; top: 0.75rem;
+      width: 5px; height: 5px; background: #66fcf9; border-radius: 50%;
+    }
+    .slide-hero .col.answer li::before { background: #00ff8d; }
+
+    /* Slides 2-3 — light */
+    .slide-light { background: #f6f8fb; }
+    .slide-light h1 {
+      font-family: "Poppins", sans-serif;
+      font-size: 2.25rem; font-weight: 700;
+      color: #1d3c83; margin-bottom: 0.5rem;
+    }
+    .slide-light .sub {
+      font-size: 1rem; color: #475467; margin-bottom: 2rem;
+    }
+    .metrics-row {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .metric {
+      background: #fff; border: 1px solid #eaecf0;
+      border-radius: 8px; padding: 1.25rem; text-align: center;
+    }
+    .metric .val {
+      font-family: "Poppins", sans-serif;
+      font-size: 2rem; font-weight: 700; color: #23569a;
+    }
+    .metric .val.green { color: #238052; }
+    .metric .lbl { font-size: 0.75rem; color: #475467; margin-top: 0.25rem; }
+    .flow-bar {
+      display: flex; align-items: center; gap: 0.35rem;
+      flex-wrap: wrap; margin-bottom: 1.5rem;
+    }
+    .flow-step {
+      background: #fff; border: 1px solid #d0d5dd;
+      border-left: 3px solid #23569a;
+      border-radius: 6px; padding: 0.4rem 0.65rem;
+      font-size: 0.7rem; font-weight: 600; color: #1d3c83;
+    }
+    .flow-arrow { color: #23a3de; font-size: 0.9rem; }
+    .roi-banner {
+      background: linear-gradient(135deg, #1d3c83, #23569a);
+      color: #fff; border-radius: 8px;
+      padding: 1.5rem 2rem;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1rem; text-align: center;
+    }
+    .roi-banner .big {
+      font-family: "Poppins", sans-serif;
+      font-size: 1.75rem; font-weight: 700; color: #66fcf9;
+    }
+    .roi-banner .s { font-size: 0.72rem; opacity: 0.8; margin-top: 0.2rem; }
+
+    /* Slide 3 */
+    .ask-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    }
+    .ask-card {
+      background: #fff; border: 1px solid #eaecf0;
+      border-radius: 8px; padding: 1.5rem;
+    }
+    .ask-card h3 {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.8rem; font-weight: 600;
+      color: #23a3de; text-transform: uppercase;
+      letter-spacing: 0.08em; margin-bottom: 0.75rem;
+    }
+    .ask-card p, .ask-card li {
+      font-size: 0.95rem; color: #475467; line-height: 1.6;
+    }
+    .ask-card ul { padding-left: 1.1rem; }
+    .ask-card li { margin-bottom: 0.35rem; }
+    .cta-box {
+      margin-top: 1.5rem; background: #23569a;
+      color: #fff; border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .cta-box strong {
+      font-family: "Poppins", sans-serif; font-size: 1.1rem;
+    }
+    .cta-box span { font-size: 0.85rem; opacity: 0.85; }
+
+    .nav { position: fixed; bottom: 1.5rem; right: 2rem; display: flex; gap: 0.75rem; z-index: 10; }
+    .nav button {
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+      color: #fff; padding: 0.5rem 1.25rem; border-radius: 6px;
+      cursor: pointer; font-size: 0.9rem;
+    }
+    .slide-light ~ .nav button, .nav-on-light button {
+      background: #fff; border-color: #d0d5dd; color: #1d3c83;
+    }
+    .counter {
+      position: fixed; bottom: 1.75rem; left: 2rem;
+      font-size: 0.85rem; z-index: 10;
+    }
+    .slide-hero.active ~ .counter { color: rgba(255,255,255,0.5); }
+    .slide-light.active ~ .counter { color: #475467; }
+  </style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- SLIDE 1: Opportunity -->
+  <div class="slide slide-hero active">
+    <div class="eyebrow">VikingCloud Quality Engineering · CXO Briefing</div>
+    <h1>Agentic QE:<br>AI Speed. Human Quality.</h1>
+    <div class="cols">
+      <div class="col">
+        <h3>The Problem</h3>
+        <ul>
+          <li>4–8 hours manual test design per Jira story</li>
+          <li>Security, edge, and UAT coverage inconsistently applied</li>
+          <li>Automation backlog growing faster than SDET capacity</li>
+          <li>Weak traceability from story → test → defect</li>
+        </ul>
+      </div>
+      <div class="col answer">
+        <h3>The Answer</h3>
+        <ul>
+          <li>Cursor AI agents read Jira, Confluence, PRDs, bug history</li>
+          <li>Auto-generate labeled test cases in under 15 minutes</li>
+          <li>QA SME mandatory review before XRay publish</li>
+          <li>Automation agents generate Cypress/Playwright scripts</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: Value -->
+  <div class="slide slide-light">
+    <h1>Measurable Impact</h1>
+    <p class="sub">8-phase agentic lifecycle · 11 agents · 6 human gates · Illustrative model: 4 squads (~16 QE FTE), 200 stories/year</p>
+
+    <div class="flow-bar">
+      <span class="flow-step">Intake</span><span class="flow-arrow">→</span>
+      <span class="flow-step">Knowledge</span><span class="flow-arrow">→</span>
+      <span class="flow-step">Design</span><span class="flow-arrow">→</span>
+      <span class="flow-step">SME Review</span><span class="flow-arrow">→</span>
+      <span class="flow-step">XRay</span><span class="flow-arrow">→</span>
+      <span class="flow-step">Automate</span><span class="flow-arrow">→</span>
+      <span class="flow-step">Execute</span><span class="flow-arrow">↻</span>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric"><div class="val">−75%</div><div class="lbl">TC Authoring Time</div></div>
+      <div class="metric"><div class="val green">−40%</div><div class="lbl">Escape Defects</div></div>
+      <div class="metric"><div class="val">3.2×</div><div class="lbl">QE Throughput / FTE</div></div>
+      <div class="metric"><div class="val green">100%</div><div class="lbl">Traceability</div></div>
+    </div>
+
+    <div class="roi-banner">
+      <div><div class="big">$357K</div><div class="s">Year 1 Labor Savings</div></div>
+      <div><div class="big">$85K</div><div class="s">Defect Cost Avoidance</div></div>
+      <div><div class="big">4.8×</div><div class="s">ROI Multiple</div></div>
+      <div><div class="big">18 wks</div><div class="s">Payback Period</div></div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: Ask -->
+  <div class="slide slide-light">
+    <h1>The Ask</h1>
+    <p class="sub">Low-risk pilot. Human gates at every step. Scale only on proven metrics.</p>
+
+    <div class="ask-grid">
+      <div class="ask-card">
+        <h3>Pilot Proposal (4 Weeks)</h3>
+        <ul>
+          <li>1 squad, 10 representative Jira stories</li>
+          <li>Full agentic flow with QA SME review gates</li>
+          <li>Baseline vs. agent-assisted metrics captured</li>
+          <li>Success: 75% TC time cut, 100% AC coverage, SME approval</li>
+        </ul>
+      </div>
+      <div class="ask-card">
+        <h3>Investment & Risk</h3>
+        <ul>
+          <li><strong>$45K</strong> Year 1 (Cursor, MCP, training)</li>
+          <li>No auto-publish without human sign-off</li>
+          <li>Manual fallback SOP if agent fails</li>
+          <li>Audit trail on every agent run</li>
+        </ul>
+      </div>
+      <div class="ask-card">
+        <h3>Rollout Path</h3>
+        <ul>
+          <li><strong>Q1:</strong> Pilot (4 wks) → Integrate (6 wks)</li>
+          <li><strong>Q2–Q3:</strong> Automate + codegen MCP</li>
+          <li><strong>Q4:</strong> Scale to all squads</li>
+        </ul>
+      </div>
+      <div class="ask-card">
+        <h3>Ownership</h3>
+        <ul>
+          <li><strong>Accountable:</strong> QE Leadership</li>
+          <li><strong>Sponsor needed:</strong> Executive for cross-squad adoption</li>
+          <li><strong>Decision:</strong> Greenlight pilot this quarter</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <strong>Approve 4-week Agentic QE pilot</strong>
+      <span>10 stories · 1 squad · measurable ROI in 30 days</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="counter" id="counter">1 / 3</div>
+<div class="nav" id="nav">
+  <button onclick="prev()">← Prev</button>
+  <button onclick="next()">Next →</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const nav = document.getElementById('nav');
+  let current = 0;
+
+  function show(n) {
+    slides[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    document.getElementById('counter').textContent = (current + 1) + ' / 3';
+    nav.className = slides[current].classList.contains('slide-light') ? 'nav nav-on-light' : 'nav';
+  }
+  function next() { show(current + 1); }
+  function prev() { show(current - 1); }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'F11') { /* browser handles */ }
+  });
+  show(0);
+</script>
+</body>
+</html>

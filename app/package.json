@@ -1,0 +1,11 @@
+{
+  "name": "agentic-qe-platform",
+  "version": "1.0.0",
+  "description": "VikingCloud Agentic QE Platform — end-to-end quality engineering lifecycle",
+  "private": true,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server.js",
+    "host": "powershell -ExecutionPolicy Bypass -File ../deploy/host.ps1"
+  }
+}

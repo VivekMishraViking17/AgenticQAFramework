@@ -1,0 +1,42 @@
+{
+  "period": "Last 90 days · Board 154",
+  "historical": {
+    "total_lifecycle": 231,
+    "closed": 208,
+    "active": 23,
+    "found_in_int": 198,
+    "found_in_uat": 26,
+    "escaped_to_prod": 7,
+    "qa_reopened": 31,
+    "qa_reopen_events": 42
+  },
+  "closed_samples": [
+    { "workstream": "VCP UI Redesign", "count": 48, "root_cause": "Code" },
+    { "workstream": "VCP UI Redesign", "count": 12, "root_cause": "Requirements" },
+    { "workstream": "JSIM 3 Pillars", "count": 34, "root_cause": "Integration" },
+    { "workstream": "Scamnetic", "count": 28, "root_cause": "Test Data" },
+    { "workstream": "Insurance", "count": 22, "root_cause": "Code" },
+    { "workstream": "Marketplace checkout", "count": 18, "root_cause": "Code" },
+    { "workstream": "Auth0 / Keycloak", "count": 15, "root_cause": "Environment" },
+    { "workstream": "JSIM header / standalone", "count": 11, "root_cause": "Requirements" },
+    { "workstream": "Platform API", "count": 14, "root_cause": "Integration" },
+    { "workstream": "Localization", "count": 9, "root_cause": "Process" },
+    { "workstream": "Accessibility", "count": 7, "root_cause": "UX" }
+  ],
+  "escapes": [
+    { "key": "VCPCORE-8102", "title": "Merchant theme API 500 on prod edge case", "workstream": "VCP UI Redesign", "severity": "High", "found_in": "Production", "days_after_release": 12 },
+    { "key": "VCPCORE-8098", "title": "Insurance widget premium calc off by rounding", "workstream": "Insurance", "severity": "Medium", "found_in": "UAT", "days_after_release": 3 },
+    { "key": "VCPCORE-8081", "title": "Scamnetic alert email missing FR-CA subject", "workstream": "Scamnetic", "severity": "Low", "found_in": "Production", "days_after_release": 21 },
+    { "key": "VCPCORE-8066", "title": "Checkout retry double-charges on timeout", "workstream": "Marketplace checkout", "severity": "High", "found_in": "Production", "days_after_release": 5 },
+    { "key": "VCPCORE-8054", "title": "JSIM pillar count stale after cache purge", "workstream": "JSIM 3 Pillars", "severity": "Medium", "found_in": "UAT", "days_after_release": 8 },
+    { "key": "VCPCORE-8039", "title": "Keycloak session not cleared on merchant switch", "workstream": "Auth0 / Keycloak", "severity": "High", "found_in": "Production", "days_after_release": 14 },
+    { "key": "VCPCORE-8021", "title": "Security score widget shows 0 on slow 3G", "workstream": "VCP UI Redesign", "severity": "Medium", "found_in": "UAT", "days_after_release": 2 }
+  ],
+  "reopen_leaders": [
+    { "workstream": "VCP UI Redesign", "reopen_rate_pct": 18, "reopens": 11, "closed": 60 },
+    { "workstream": "Marketplace checkout", "reopen_rate_pct": 22, "reopens": 4, "closed": 18 },
+    { "workstream": "JSIM header / standalone", "reopen_rate_pct": 27, "reopens": 3, "closed": 11 },
+    { "workstream": "Insurance", "reopen_rate_pct": 14, "reopens": 3, "closed": 22 },
+    { "workstream": "Auth0 / Keycloak", "reopen_rate_pct": 13, "reopens": 2, "closed": 15 }
+  ]
+}

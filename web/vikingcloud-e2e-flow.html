@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VikingCloud E2E QE Flow | Agentic Framework</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #23569a; --navy-dark: #1d3c83; --navy-deep: #1a1f2b;
+      --cyan: #66fcf9; --cyan-d: #23a3de; --green: #238052;
+      --bg: #f6f8fb; --surface: #fff; --alt: #ecf3f9;
+      --border: #d0d5dd; --border-l: #eaecf0;
+      --text: #101828; --muted: #475467;
+      --warn: #e79b41; --danger: #c8332e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Inter, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
+    h1,h2,h3 { font-family: Poppins, sans-serif; }
+    nav {
+      position: sticky; top: 0; z-index: 50; background: #fff;
+      border-bottom: 1px solid var(--border-l); padding: .75rem 2rem;
+      display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap;
+    }
+    nav .brand { font-weight: 700; color: var(--navy); margin-right: auto; font-size: .9rem; }
+    nav a { color: var(--muted); text-decoration: none; font-size: .8rem; font-weight: 500; }
+    nav a:hover { color: var(--navy); }
+    .hero {
+      background: linear-gradient(135deg, var(--navy-deep), var(--navy-dark), var(--navy));
+      color: #fff; padding: 3.5rem 2rem;
+    }
+    .hero-inner { max-width: 1100px; margin: 0 auto; }
+    .eyebrow { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--cyan); font-weight: 600; }
+    .hero h1 { font-size: 2.25rem; margin: .75rem 0 1rem; }
+    .hero p { color: rgba(255,255,255,.82); max-width: 720px; }
+    section { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+    section.alt { background: var(--alt); max-width: 100%; }
+    section.alt .inner { max-width: 1100px; margin: 0 auto; }
+    h2 { font-size: 1.5rem; color: var(--navy-dark); margin-bottom: .5rem; }
+    .lead { color: var(--muted); margin-bottom: 1.5rem; font-size: .95rem; }
+    .layer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    @media(max-width:800px) { .layer-grid { grid-template-columns: 1fr; } }
+    .layer-card {
+      background: var(--surface); border: 1px solid var(--border-l);
+      border-radius: 8px; padding: 1.25rem; border-top: 3px solid var(--navy);
+    }
+    .layer-card h3 { font-size: .9rem; color: var(--navy); margin-bottom: .5rem; }
+    .layer-card p { font-size: .8rem; color: var(--muted); }
+    .status-flow { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin: 1.25rem 0; }
+    .status {
+      background: var(--surface); border: 1px solid var(--border-l);
+      border-left: 3px solid var(--navy); border-radius: 6px;
+      padding: .5rem .75rem; font-size: .75rem; font-weight: 600;
+    }
+    .status.trigger { border-left-color: var(--cyan-d); background: #ecf3f9; }
+    .status.qa { border-left-color: var(--green); }
+    .arrow { color: var(--muted); font-size: .9rem; }
+    .milestone-table, .phase-table { width: 100%; border-collapse: collapse; font-size: .8rem; margin-top: 1rem; }
+    .milestone-table th, .phase-table th {
+      background: var(--alt); text-align: left; padding: .6rem .75rem;
+      font-size: .7rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted);
+    }
+    .milestone-table td, .phase-table td { padding: .6rem .75rem; border-bottom: 1px solid var(--border-l); vertical-align: top; }
+    .gate-num {
+      display: inline-block; background: var(--navy); color: #fff;
+      font-size: .65rem; font-weight: 700; padding: .15rem .4rem; border-radius: 4px;
+    }
+    .swimlane {
+      background: var(--navy-deep); color: rgba(255,255,255,.85);
+      border-radius: 8px; padding: 1.5rem; font-family: Consolas, monospace;
+      font-size: .68rem; line-height: 1.5; overflow-x: auto; white-space: pre;
+    }
+    .map-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .5rem; margin-top: 1rem; }
+    @media(max-width:700px) { .map-grid { grid-template-columns: 1fr; } }
+    .map-cell {
+      background: var(--surface); border: 1px solid var(--border-l);
+      border-radius: 6px; padding: .6rem; font-size: .75rem; text-align: center;
+    }
+    .map-cell.hdr { background: var(--navy); color: #fff; font-weight: 600; }
+    .map-cell.agent { background: #ecf4fe; color: var(--navy); }
+    .map-cell.jira { background: #e6f8ee; color: var(--green); }
+    .map-cell.xray { background: #fff4e5; color: #9a5f10; }
+    .cta {
+      display: inline-block; margin-top: 1rem; background: var(--cyan);
+      color: var(--navy-deep); font-weight: 600; padding: .6rem 1.25rem;
+      border-radius: 6px; text-decoration: none; font-size: .85rem;
+    }
+    footer { background: var(--navy-deep); color: rgba(255,255,255,.6); text-align: center; padding: 2rem; font-size: .8rem; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">VikingCloud · E2E QE Flow</span>
+  <a href="#layers">Layers</a>
+  <a href="#jira">Jira Lifecycle</a>
+  <a href="#milestones">Milestones</a>
+  <a href="#agentic">Agentic QE</a>
+  <a href="#swimlane">Swimlane</a>
+  <a href="#mapping">Status Map</a>
+  <a href="../app/">Launch App</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">VCPCORE · Board 154 · Programme Delivery</div>
+    <h1>End-to-End Quality Engineering Flow</h1>
+    <p>Three synchronized layers — Programme milestones, Jira story lifecycle, and Agentic QE agents — aligned to VikingCloud delivery practice on INT, XRay, and SAIR.</p>
+    <a class="cta" href="http://127.0.0.1:8080">Open Live Platform →</a>
+  </div>
+</div>
+
+<section id="layers">
+  <h2>Three-Layer Process Model</h2>
+  <p class="lead">Every VikingCloud release runs programme gates, Jira sprint workflow, and agentic QE in parallel.</p>
+  <div class="layer-grid">
+    <div class="layer-card">
+      <h3>Programme Layer</h3>
+      <p>Milestone gates #1–#12. CVEP / JSIM programme tracks. CXO QA health reports. Board 154 filters 15731–15734.</p>
+    </div>
+    <div class="layer-card">
+      <h3>Jira Sprint Layer</h3>
+      <p>VCPCORE statuses: Gathering Requirements → In Progress → Ready for QA → In QA → PO Review → Closed.</p>
+    </div>
+    <div class="layer-card">
+      <h3>Agentic QE Layer</h3>
+      <p>Cursor agents: Intake → Knowledge → Design → SME Review → XRay → Automate → Codegen → Execute.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="jira">
+  <div class="inner">
+    <h2>Jira Story Lifecycle (VCPCORE)</h2>
+    <p class="lead">Board 154 sprint lanes. Agentic intake triggers at <strong>Ready for QA</strong>.</p>
+    <div class="status-flow">
+      <span class="status">Gathering Requirements</span><span class="arrow">→</span>
+      <span class="status">Ready For Development</span><span class="arrow">→</span>
+      <span class="status">In Progress</span><span class="arrow">→</span>
+      <span class="status trigger">Ready for QA</span><span class="arrow">→</span>
+      <span class="status qa">In QA</span><span class="arrow">→</span>
+      <span class="status">PO Review</span><span class="arrow">→</span>
+      <span class="status">Closed / WAD</span>
+    </div>
+    <table class="phase-table">
+      <thead><tr><th>Status</th><th>Owner</th><th>Entry</th><th>Exit / Gate</th></tr></thead>
+      <tbody>
+        <tr><td>Gathering Requirements</td><td>PO / PM</td><td>Epic scoped</td><td>AC drafted, DoR checklist</td></tr>
+        <tr><td>In Progress</td><td>Dev</td><td>Sprint commitment</td><td>Code complete, unit tests, INT deploy</td></tr>
+        <tr><td><strong>Ready for QA</strong></td><td>Dev → QE</td><td>DoD met</td><td><span class="gate-num">AGENT TRIGGER</span> Story Context Agent</td></tr>
+        <tr><td><strong>In QA</strong></td><td>QE / QA SME</td><td>XRay TE created</td><td>Execution complete, no open P1/P2</td></tr>
+        <tr><td>PO Review</td><td>PO</td><td>Spec vs defect</td><td>PO decision documented</td></tr>
+        <tr><td>Closed</td><td>QE / Dev</td><td>All gates pass</td><td>Release-ready or WAD</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="milestones">
+  <h2>Programme Milestone Gates</h2>
+  <p class="lead">Release train gates for programme deliveries (e.g., CVEP). Milestone #7 is the primary QA critical-path gate.</p>
+  <table class="milestone-table">
+    <thead><tr><th>Gate</th><th>Name</th><th>Owner</th><th>QE Role</th></tr></thead>
+    <tbody>
+      <tr><td><span class="gate-num">#1</span></td><td>Engineering Smoke</td><td>Eng Lead</td><td>Blocks all QA until INT stable</td></tr>
+      <tr><td><span class="gate-num">#4</span></td><td>Internal Test Users</td><td>PM</td><td>Brief QA + real-data testers</td></tr>
+      <tr><td><span class="gate-num">#5</span></td><td>Test Data</td><td>PM / QE</td><td>Gmail aliases, JSIM URLs, YOURBANK client</td></tr>
+      <tr><td><span class="gate-num">#6</span></td><td>SAIR Boarding Files</td><td>Ops (Lenny)</td><td>MERCHANT + SUBSCRIPTION xlsx for E2E</td></tr>
+      <tr><td><span class="gate-num">#7</span></td><td><strong>QA Critical Path</strong></td><td>Director QE</td><td>E2E validation; XR-16269 green; Filter 15732 clear</td></tr>
+      <tr><td><span class="gate-num">#8</span></td><td>Buffer Fixes</td><td>Eng + QE</td><td>Post-#7 regression remediation</td></tr>
+      <tr><td><span class="gate-num">#12</span></td><td>UAT Kickoff</td><td>PM + QE</td><td>Production dummy-merchant UAT scenarios</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="alt" id="agentic">
+  <div class="inner">
+    <h2>Agentic QE — 8 Phases with Human Gates</h2>
+    <p class="lead">Triggered when Jira status = Ready for QA. 7 mandatory human gates preserve VikingCloud quality bar.</p>
+    <table class="phase-table">
+      <thead><tr><th>Phase</th><th>Agent</th><th>Human Gate</th><th>Accountable</th><th>Measurable Outcome</th></tr></thead>
+      <tbody>
+        <tr><td>01 Intake</td><td>Story Context Agent</td><td>Gate 1: DoR / PO Scope</td><td>PO</td><td>100% AC/DOD parsed</td></tr>
+        <tr><td>02 Knowledge</td><td>Knowledge Agent</td><td>Gate 2: SME Source Validation</td><td>QA SME</td><td>≥3 Confluence/PRD/bug refs</td></tr>
+        <tr><td>03 Design</td><td>Design + Security + UAT</td><td>—</td><td>QE Lead</td><td>8 labeled TCs in &lt;15 min</td></tr>
+        <tr><td>04 Review</td><td>Review Orchestrator</td><td>Gate 3: SME Sign-off</td><td>QA SME</td><td>100% AC coverage matrix</td></tr>
+        <tr><td>05 XRay</td><td>XRay Sync Agent</td><td>Gate 4: QE Lead Publish</td><td>QE Lead</td><td>100% Jira→XRay link; → In QA</td></tr>
+        <tr><td>06 Auto Plan</td><td>Automation Scout</td><td>Gate 5: SDET Prioritize</td><td>SDET Lead</td><td>≥70% P1/P2 candidates</td></tr>
+        <tr><td>07 Codegen</td><td>Codegen Agent</td><td>Gate 6: SDET Code Review</td><td>SDET</td><td>Playwright/Cypress PR to INT CI</td></tr>
+        <tr><td>08 Execute</td><td>Execution + Triage</td><td>Gate 7: Dev Triage</td><td>Dev</td><td>Labeled Jira defects; TE updated</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="swimlane">
+  <h2>End-to-End Swimlane</h2>
+  <p class="lead">Single story journey across PO, Dev, Agentic QE, QA SME, SDET, and DevOps.</p>
+  <div class="swimlane">PO/PM          Dev                 Agentic QE              QA SME         SDET          DevOps
+  │              │                       │                     │              │              │
+  ├─ Groom AC ───┤                       │                     │              │              │
+  ├─ Sprint plan (Board 154)             │                     │              │              │
+  │              ├─ In Progress          │                     │              │              │
+  │              ├─ Deploy INT ──────────┼─────────────────────┼──────────────┼─────────────►│
+  │              ├─ Ready for QA ───────►│                     │              │              │
+  │              │                       ├─ 01 Intake          │              │              │
+  │              │                       ├─ 02 Knowledge        │              │              │
+  │              │                       ├─ 03 Design (8 TCs)   │              │              │
+  │              │                       ├─ 04 Review ─────────►│ Approve      │              │
+  │              │                       ├─ 05 XRay → In QA     │              │              │
+  │              │                       ├─ 06 Auto plan ─────────┼─────────────►│              │
+  │              │                       ├─ 07 Codegen PR ────────┼─────────────►│ Review       │
+  │              │                       ├─ 08 CI Execute ───────┼──────────────┼────────────►│
+  │              │◄── Product defect ────┤                      │              │              │
+  │◄─ PO Review ─┤ (spec ambiguity)      │                      │              │              │
+  ├─ Closed/WAD ─┤                       │                      │              │              │</div>
+</section>
+
+<section class="alt" id="mapping">
+  <div class="inner">
+    <h2>Agentic Phase → Jira Status → XRay</h2>
+    <div class="map-grid">
+      <div class="map-cell hdr">Agentic Phase</div>
+      <div class="map-cell hdr">Jira Status</div>
+      <div class="map-cell hdr">XRay Action</div>
+
+      <div class="map-cell agent">01–04 Intake→Review</div>
+      <div class="map-cell jira">Ready for QA</div>
+      <div class="map-cell xray">Draft TCs</div>
+
+      <div class="map-cell agent">05 XRay Sync</div>
+      <div class="map-cell jira">In QA</div>
+      <div class="map-cell xray">Publish tests + TE</div>
+
+      <div class="map-cell agent">06–07 Auto + Codegen</div>
+      <div class="map-cell jira">In QA</div>
+      <div class="map-cell xray">Link PR to XRay key</div>
+
+      <div class="map-cell agent">08 Execute</div>
+      <div class="map-cell jira">PO Review / Closed</div>
+      <div class="map-cell xray">TE Pass/Fail + bugs</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>VikingCloud Priorities & Environments</h2>
+  <div class="layer-grid">
+    <div class="layer-card"><h3>Priorities</h3><p>P1 Deal Breaker · P2 Critical · P3 Highly Desirable · P4 Nice to Have</p></div>
+    <div class="layer-card"><h3>INT Environment</h3><p>asgard-int.vikingcloud.com · YOURBANK test client · Auth0/Keycloak</p></div>
+    <div class="layer-card"><h3>XRay Programme</h3><p>Test Set XR-16269 · TE per epic · GraphQL coverage reporting</p></div>
+  </div>
+</section>
+
+<footer>VikingCloud Quality Engineering · Agentic QE Framework · VCPCORE Board 154</footer>
+</body>
+</html>

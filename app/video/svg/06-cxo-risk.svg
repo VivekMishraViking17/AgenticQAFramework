@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="hero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="50%" stop-color="#1d3c83"/>
+      <stop offset="100%" stop-color="#23569a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="#f4f6f9"/>
+  
+    <rect width="1920" height="320" fill="url(#hero)"/>
+  <text x="64" y="72" fill="#66fcf9" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start">WORKSTREAM SCORECARD</text>
+  <text x="64" y="130" fill="#fff" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700" text-anchor="start">Pass Rate, Status &amp; Top Risk</text>
+  <text x="64" y="175" fill="rgba(255,255,255,0.88)" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" text-anchor="start">UI, insurance, scam, JSIM core healthy — focus checkout and JSIM standalone</text>
+    <rect x="64" y="360" width="1792" height="60" rx="8" fill="#fff" stroke="#e2e8f0"/>
+      <text x="88" y="398" fill="#1a2744" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" text-anchor="start">VCP UI Redesign</text>
+      <text x="520" y="398" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="start">87%</text>
+      <rect x="620" y="378" width="90" height="28" rx="14" fill="#8ea52322"/>
+      <text x="665" y="398" fill="#8ea523" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">On track</text>
+      <text x="760" y="398" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Security Score in QA</text><rect x="64" y="432" width="1792" height="60" rx="8" fill="#fff" stroke="#e2e8f0"/>
+      <text x="88" y="470" fill="#1a2744" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" text-anchor="start">JSIM 3 Pillars</text>
+      <text x="520" y="470" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="start">85%</text>
+      <rect x="620" y="450" width="90" height="28" rx="14" fill="#8ea52322"/>
+      <text x="665" y="470" fill="#8ea523" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">On track</text>
+      <text x="760" y="470" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Malware count validation</text><rect x="64" y="504" width="1792" height="60" rx="8" fill="#fff" stroke="#e2e8f0"/>
+      <text x="88" y="542" fill="#1a2744" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" text-anchor="start">Marketplace checkout</text>
+      <text x="520" y="542" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="start">44%</text>
+      <rect x="620" y="522" width="90" height="28" rx="14" fill="#cc241522"/>
+      <text x="665" y="542" fill="#cc2415" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">At risk</text>
+      <text x="760" y="542" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">24 TODO tests remaining</text><rect x="64" y="576" width="1792" height="60" rx="8" fill="#fff" stroke="#e2e8f0"/>
+      <text x="88" y="614" fill="#1a2744" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" text-anchor="start">JSIM header / standalone</text>
+      <text x="520" y="614" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="start">11%</text>
+      <rect x="620" y="594" width="90" height="28" rx="14" fill="#cc241522"/>
+      <text x="665" y="614" fill="#cc2415" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">At risk</text>
+      <text x="760" y="614" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">4 bugs in PO review</text>
+  
+  <text x="64" y="1050" fill="#64748b" font-family="Segoe UI" font-size="13">VikingCloud · VCPCORE Board 154 · Agentic QE Platform</text>
+</svg>

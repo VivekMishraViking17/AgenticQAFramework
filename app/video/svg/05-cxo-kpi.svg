@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="hero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="50%" stop-color="#1d3c83"/>
+      <stop offset="100%" stop-color="#23569a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="#f4f6f9"/>
+  
+    <rect width="1920" height="320" fill="url(#hero)"/>
+  <text x="64" y="72" fill="#66fcf9" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start">CXO READOUT · 14 JULY 2026</text>
+  <text x="64" y="130" fill="#fff" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700" text-anchor="start">Programme Health at a Glance</text>
+  <text x="64" y="175" fill="rgba(255,255,255,0.88)" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" text-anchor="start">Core CVEP workstreams validated — checkout and JSIM header are delivery risks</text>
+    <rect x="64" y="360" width="420" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="64" y="360" width="420" height="6" rx="3" fill="#8ea523"/>
+  <text x="88" y="422" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" text-anchor="start">84%</text>
+  <text x="88" y="452" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">Core pass rate</text>
+  <text x="88" y="478" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">481 of 571 tests</text>
+    <rect x="520" y="360" width="420" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="520" y="360" width="420" height="6" rx="3" fill="#8ea523"/>
+  <text x="544" y="422" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" text-anchor="start">90%</text>
+  <text x="544" y="452" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">Bug closure</text>
+  <text x="544" y="478" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">208 of 231 closed</text>
+    <rect x="976" y="360" width="420" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="976" y="360" width="420" height="6" rx="3" fill="#8ea523"/>
+  <text x="1000" y="422" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" text-anchor="start">87%</text>
+  <text x="1000" y="452" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">Tests executed</text>
+  <text x="1000" y="478" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">560 of 642 run</text>
+    <rect x="1432" y="360" width="420" height="140" rx="12" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="1432" y="360" width="420" height="6" rx="3" fill="#d97706"/>
+  <text x="1456" y="422" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" text-anchor="start">23</text>
+  <text x="1456" y="452" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">Active defects</text>
+  <text x="1456" y="478" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">Plus 6 P2 for PO</text>
+    <rect x="64" y="540" width="1792" height="100" rx="12" fill="#fff" stroke="#d97706" stroke-width="3"/>
+    <text x="88" y="600" fill="#1d3c83" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Release Decision: Conditional Go — checkout + JSIM header block Milestone #7 (Director QE)</text>
+  
+  <text x="64" y="1050" fill="#64748b" font-family="Segoe UI" font-size="13">VikingCloud · VCPCORE Board 154 · Agentic QE Platform</text>
+</svg>

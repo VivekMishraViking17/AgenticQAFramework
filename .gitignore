@@ -1,0 +1,39 @@
+# Secrets and local config
+app/config/credentials.json
+app/.env
+.env
+*.local.json
+
+# Runtime data
+app/data.json
+app/backend/*.db
+
+# Node / Python
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build and temp
+app/.tmp-pptx/
+app/video/output/tmp/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Large generated media (regenerate via app/video/generate-video.ps1)
+app/video/output/*.mp4
+app/video/output/*.wav
+app/video/output/tmp/
+
+# Presentation outputs (regenerate via presentation/*.ps1)
+presentation/*.pptx

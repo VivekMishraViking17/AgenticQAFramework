@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="hero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="50%" stop-color="#1d3c83"/>
+      <stop offset="100%" stop-color="#23569a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="#f4f6f9"/>
+  
+    <rect width="1920" height="1080" fill="url(#hero)"/>
+    <text x="960" y="400" fill="#66fcf9" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">VIKINGCLOUD</text>
+    <text x="960" y="500" fill="#fff" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="700" text-anchor="middle">Traceable · Measurable · Board-Ready</text>
+    <text x="960" y="580" fill="rgba(255,255,255,0.85)" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" text-anchor="middle">Agentic QE Platform — end-to-end quality from Dev handoff to CXO gates</text>
+  
+  <text x="64" y="1050" fill="#64748b" font-family="Segoe UI" font-size="13">VikingCloud · VCPCORE Board 154 · Agentic QE Platform</text>
+</svg>

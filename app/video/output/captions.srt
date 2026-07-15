@@ -1,0 +1,45 @@
+﻿1
+00:00:00,000 --> 00:00:10,173
+VikingCloud Agentic QE Platform 
+ VCPCORE Board 154 
+ CXO Briefing
+
+2
+00:00:10,573 --> 00:00:23,689
+Nine-stage Agentic QE lifecycle - Dev handoff to defect closure
+
+3
+00:00:24,089 --> 00:00:42,251
+Stages 00-04: Handoff -> Intake -> Knowledge -> Design -> QA Review
+
+4
+00:00:42,651 --> 00:00:59,382
+Stages 05-08: XRay -> Automation -> Codegen -> Execute
+
+5
+00:00:59,782 --> 00:01:18,893
+84% pass 
+ 90% closure 
+ 23 active defects 
+ Conditional Go
+
+6
+00:01:19,293 --> 00:01:37,159
+At risk: Checkout 44% 
+ JSIM header 11% 
+ Focus investment here
+
+7
+00:01:37,559 --> 00:01:54,275
+3% escape rate 
+ Pareto: UI Redesign + Checkout = 80% of defects
+
+8
+00:01:54,675 --> 00:02:10,847
+M#1 Engineering Smoke 
+ M#7 QA Critical Path 
+ M#12 UAT Kickoff
+
+9
+00:02:11,247 --> 00:02:17,030
+VikingCloud Agentic QE - Traceable, Measurable, Board-ready

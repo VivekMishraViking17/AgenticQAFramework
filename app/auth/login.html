@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in | VikingCloud Agentic QE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      font-family: Inter, Segoe UI, sans-serif;
+      background: linear-gradient(135deg, #0a1628 0%, #1d3c83 55%, #23569a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      padding: 24px;
+    }
+    .card {
+      width: 100%;
+      max-width: 440px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 40px 36px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.25);
+    }
+    .brand {
+      font-family: Poppins, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #66fcf9;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-family: Poppins, sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    p {
+      color: rgba(255,255,255,0.75);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #fff;
+      color: #1d3c83;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .note {
+      margin-top: 24px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      line-height: 1.5;
+    }
+    svg { width: 20px; height: 20px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">VikingCloud</div>
+    <h1>Agentic QE Platform</h1>
+    <p>Sign in with your VikingCloud Microsoft account to access the quality engineering workspace.</p>
+    <a class="btn" href="/auth/start">
+      <svg viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg"><path fill="#f25022" d="M1 1h10v10H1z"/><path fill="#00a4ef" d="M12 1h10v10H12z"/><path fill="#7fba00" d="M1 12h10v10H1z"/><path fill="#ffb900" d="M12 12h10v10H12z"/></svg>
+      Sign in with Microsoft
+    </a>
+    <p class="note">Access restricted to @vikingcloud.com accounts.<br/>Contact QE Engineering for access issues.</p>
+  </div>
+</body>
+</html>

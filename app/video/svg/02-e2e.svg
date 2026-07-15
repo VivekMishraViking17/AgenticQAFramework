@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="hero" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="50%" stop-color="#1d3c83"/>
+      <stop offset="100%" stop-color="#23569a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="#f4f6f9"/>
+  
+    <rect width="1920" height="320" fill="url(#hero)"/>
+  <text x="64" y="72" fill="#66fcf9" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="start">VIKINGCLOUD · VCPCORE · BOARD 154</text>
+  <text x="64" y="130" fill="#fff" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700" text-anchor="start">End-to-End Quality Process</text>
+  <text x="64" y="175" fill="rgba(255,255,255,0.88)" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" text-anchor="start">Nine agentic stages — Dev handoff to defect closure</text>
+    <rect x="120" y="400" width="160" height="100" rx="10" fill="#fff" stroke="#8ea523" stroke-width="2"/>
+      <circle cx="200" cy="430" r="16" fill="#8ea523"/>
+      <text x="200" y="470" fill="#1a2744" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">00</text>
+      <text x="200" y="488" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="middle">Handoff</text><rect x="310" y="400" width="160" height="100" rx="10" fill="#fff" stroke="#8ea523" stroke-width="2"/>
+      <circle cx="390" cy="430" r="16" fill="#8ea523"/>
+      <text x="390" y="470" fill="#1a2744" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">01</text>
+      <text x="390" y="488" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="middle">Intake</text><rect x="500" y="400" width="160" height="100" rx="10" fill="#fff" stroke="#8ea523" stroke-width="2"/>
+      <circle cx="580" cy="430" r="16" fill="#8ea523"/>
+      <text x="580" y="470" fill="#1a2744" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">02</text>
+      <text x="580" y="488" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="middle">Knowledge</text><rect x="690" y="400" width="160" height="100" rx="10" fill="#fff" stroke="#8ea523" stroke-width="2"/>
+      <circle cx="770" cy="430" r="16" fill="#8ea523"/>
+      <text x="770" y="470" fill="#1a2744" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">03</text>
+      <text x="770" y="488" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="middle">Design</text><rect x="880" y="400" width="160" height="100" rx="10" fill="#fff" stroke="#8ea523" stroke-width="2"/>
+      <circle cx="960" cy="430" r="16" fill="#8ea523"/>
+      <text x="960" y="470" fill="#1a2744" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">04</text>
+      <text x="960" y="488" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="middle">Review</text><rect x="1070" y="400" width="160" height="100" rx="10" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+      <circle cx="1150" cy="430" r="16" fill="#cbd5e1"/>
+      <text x="1150" y="470" fill="#1a2744" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">05</text>
+      <text x="1150" y="488" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="middle">XRay</text><rect x="1260" y="400" width="160" height="100" rx="10" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+      <circle cx="1340" cy="430" r="16" fill="#cbd5e1"/>
+      <text x="1340" y="470" fill="#1a2744" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">06</text>
+      <text x="1340" y="488" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="middle">Auto</text><rect x="1450" y="400" width="160" height="100" rx="10" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+      <circle cx="1530" cy="430" r="16" fill="#cbd5e1"/>
+      <text x="1530" y="470" fill="#1a2744" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">07</text>
+      <text x="1530" y="488" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="middle">Code</text><rect x="1640" y="400" width="160" height="100" rx="10" fill="#fff" stroke="#1d3c83" stroke-width="2"/>
+      <circle cx="1720" cy="430" r="16" fill="#1d3c83"/>
+      <text x="1720" y="470" fill="#1a2744" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle">08</text>
+      <text x="1720" y="488" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="middle">Execute</text>
+    <text x="960" y="580" fill="#64748b" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="middle">Programme: Milestones #1–#12 · CVEP/JSIM · CXO gates</text>
+  
+  <text x="64" y="1050" fill="#64748b" font-family="Segoe UI" font-size="13">VikingCloud · VCPCORE Board 154 · Agentic QE Platform</text>
+</svg>
