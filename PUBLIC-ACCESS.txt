@@ -1,27 +1,26 @@
-# AgenticQAFramework — URLs
+# AgenticQAFramework — Live URLs
 
-## Branded URL you want (FREE — 5 min setup)
+## GitHub repo
 
-**https://agenticqaframework.onrender.com**
-
-Run once:
-```powershell
-powershell -ExecutionPolicy Bypass -File C:\Users\VivekMishra\agentic-qe-framework\deploy\setup-agenticqaframework-url.ps1
-```
-
-Needs free GitHub + free Render accounts. No payment. PC can be off after deploy.
+https://github.com/VivekMishraViking17/AgenticQAFramework
 
 ---
 
-## Temporary URL (works now from your PC)
+## Branded URL (deploy on Render — free)
 
-**https://low-feelings-preston-railway.trycloudflare.com**
+**https://agenticqaframework.onrender.com**
+
+1. Open https://dashboard.render.com/select-repo?type=blueprint
+2. Connect GitHub → select **AgenticQAFramework**
+3. Set `ACCESS_CODE` = `VC-QE-2026`
+4. Deploy (takes ~5 min first time)
 
 Sign in: `@vikingcloud.com` + `VC-QE-2026`
 
-> Free tunnel URLs cannot be renamed to "AgenticQAFramework" — only Render gives that name for $0.
+---
 
-Restart tunnel:
-```powershell
-powershell -ExecutionPolicy Bypass -File C:\Users\VivekMishra\agentic-qe-framework\deploy\start-public.ps1
-```
+## Temporary URL (your PC, until Render is live)
+
+**https://low-feelings-preston-railway.trycloudflare.com**
+
+Same sign-in. Keep PC on.

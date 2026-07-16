@@ -2,9 +2,9 @@
 
 End-to-end AI-powered Quality Engineering lifecycle for VikingCloud — Cursor agents, Jira, Confluence, XRay, and Playwright automation.
 
-**Repository:** `C:\Users\VivekMishra\agentic-qe-framework`  
-**Structure guide:** [REPOSITORY.md](REPOSITORY.md)  
-**Hosting for VikingCloud users:** [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
+**Repository:** [github.com/VivekMishraViking17/AgenticQAFramework](https://github.com/VivekMishraViking17/AgenticQAFramework)  
+**Live URL (after Render deploy):** https://agenticqaframework.onrender.com  
+**Deploy guide:** [DEPLOY.md](DEPLOY.md)
 
 ---
 
