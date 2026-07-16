@@ -181,7 +181,7 @@ function setSessionCookie(res, user, cfg = getConfig()) {
     `${cfg.cookieName}=${encodeURIComponent(token)}`,
     "Path=/",
     "HttpOnly",
-    "SameSite=Lax",
+    "SameSite=None",
     `Max-Age=${cfg.sessionHours * 3600}`,
   ];
   if (secure) parts.push("Secure");

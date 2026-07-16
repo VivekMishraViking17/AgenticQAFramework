@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in | QE Agentic Framework</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <script src="config.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh; font-family: Inter, Segoe UI, sans-serif;
+      background: linear-gradient(135deg, #0a1628, #1d3c83 55%, #23569a);
+      display: flex; align-items: center; justify-content: center; color: #fff; padding: 24px;
+    }
+    .card {
+      width: 100%; max-width: 440px; background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 40px 36px;
+    }
+    .brand { font-family: Poppins, sans-serif; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #66fcf9; margin-bottom: 8px; }
+    h1 { font-family: Poppins, sans-serif; font-size: 28px; margin-bottom: 8px; }
+    p { color: rgba(255,255,255,.75); font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
+    label { display: block; font-size: 12px; color: rgba(255,255,255,.6); margin-bottom: 6px; }
+    input { width: 100%; padding: 12px 14px; border: 1px solid rgba(255,255,255,.2); border-radius: 8px; background: rgba(0,0,0,.2); color: #fff; font-size: 14px; margin-bottom: 16px; }
+    .btn { width: 100%; padding: 14px; border: none; border-radius: 10px; background: #fff; color: #1d3c83; font-size: 15px; font-weight: 600; cursor: pointer; }
+    .err { background: rgba(204,36,21,.25); border: 1px solid rgba(204,36,21,.5); padding: 10px 12px; border-radius: 8px; font-size: 13px; margin-bottom: 16px; display: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">VikingCloud</div>
+    <h1>QE Agentic Framework</h1>
+    <p>Sign in with your VikingCloud email and team access code.</p>
+    <div class="err" id="err">Invalid email or access code.</div>
+    <form id="form">
+      <label for="email">Work email (@vikingcloud.com)</label>
+      <input id="email" name="email" type="email" required placeholder="you.name@vikingcloud.com" />
+      <label for="access_code">Team access code</label>
+      <input id="access_code" name="access_code" type="password" required />
+      <button class="btn" type="submit">Sign in</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById("form").onsubmit = async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const access_code = document.getElementById("access_code").value;
+      const err = document.getElementById("err");
+      err.style.display = "none";
+      try {
+        const res = await fetch((window.API_BASE || "") + "/auth/login", {
+          method: "POST",
+          credentials: "include",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ email, access_code }),
+        });
+        if (res.ok || res.redirected || res.status === 302) {
+          window.location.href = "index.html";
+          return;
+        }
+        err.style.display = "block";
+      } catch {
+        err.textContent = "Cannot reach server. Keep the host PC online.";
+        err.style.display = "block";
+      }
+    };
+  </script>
+</body>
+</html>
