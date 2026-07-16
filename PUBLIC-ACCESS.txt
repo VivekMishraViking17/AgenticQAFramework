@@ -1,23 +1,24 @@
-# AgenticQAFramework — VikingCloudQA URL
+# AgenticQAFramework — VikingCloud URL
 
-## Target (your own org)
+## Live app (GitHub Pages)
 
-**https://vikingcloudqa.github.io/agenticframework/**
+**https://vikingcloud.github.io/VikingCloudQA/**
 
-Setup: run `deploy\SETUP-VIKINGCLOUDQA.ps1`  
-Guide: `docs\VIKINGCLOUDQA-URL-SETUP.md`
+Login: `@vikingcloud.com` + `VC-QE-2026`
+
+Repo: https://github.com/VikingCloud/VikingCloudQA
 
 ---
 
-## Current (until setup done)
+## Backend (your PC must stay on)
 
-**https://vivekmishraviking17.github.io/AgenticQAFramework/**
-
-Sign in: `@vikingcloud.com` + `VC-QE-2026`
-
-Backend API: **https://oliver-peers-trusted-attitude.trycloudflare.com**
-
-Keep PC on (backend + tunnel must stay running).
+API: **https://oliver-peers-trusted-attitude.trycloudflare.com**
 
 Auto-sync after tunnel restart:
 `powershell -ExecutionPolicy Bypass -File deploy\auto-sync-public.ps1`
+
+---
+
+## Fallback (personal GitHub)
+
+**https://vivekmishraviking17.github.io/AgenticQAFramework/**

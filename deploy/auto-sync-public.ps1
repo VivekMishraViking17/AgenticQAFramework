@@ -78,5 +78,5 @@ if ($current -notmatch [regex]::Escape($tunnelUrl)) {
 }
 
 Write-Host ""
-Write-Host "App URL:  https://vivekmishraviking17.github.io/AgenticQAFramework/" -ForegroundColor Green
+Write-Host "App URL:  https://vikingcloud.github.io/VikingCloudQA/" -ForegroundColor Green
 Write-Host "Backend:  $tunnelUrl" -ForegroundColor Green
