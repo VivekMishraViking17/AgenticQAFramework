@@ -4,34 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QE Agentic Framework | VikingCloud</title>
-  <meta http-equiv="refresh" content="2;url=https://oliver-peers-trusted-attitude.trycloudflare.com/auth/login.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>Q</text></svg>" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      min-height: 100vh; display: flex; align-items: center; justify-content: center;
-      font-family: Inter, Segoe UI, sans-serif;
-      background: linear-gradient(135deg, #0a1628, #1d3c83 55%, #23569a);
-      color: #fff; padding: 24px; text-align: center;
+    html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #0a1628; }
+    iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .loading {
+      position: fixed; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; background: linear-gradient(135deg, #0a1628, #1d3c83);
+      color: #fff; font-family: Segoe UI, sans-serif; z-index: 10;
     }
-    h1 { font-family: Poppins, sans-serif; font-size: 2rem; margin-bottom: 8px; }
-    .brand { color: #66fcf9; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
-    p { color: rgba(255,255,255,.75); margin-bottom: 24px; }
-    a {
-      display: inline-block; padding: 14px 28px; background: #fff; color: #1d3c83;
-      text-decoration: none; border-radius: 10px; font-weight: 600;
-    }
-    a:hover { box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+    .loading h1 { font-size: 1.5rem; margin: 0 0 8px; }
+    .loading p { opacity: 0.7; font-size: 0.9rem; }
+    .brand { color: #66fcf9; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px; }
   </style>
 </head>
 <body>
-  <div>
+  <div class="loading" id="loading">
     <div class="brand">VikingCloud</div>
     <h1>QE Agentic Framework</h1>
-    <p>Redirecting to the quality engineering platform…</p>
-    <a href="https://oliver-peers-trusted-attitude.trycloudflare.com/auth/login.html">Open Platform</a>
-    <p style="margin-top:20px;font-size:12px;opacity:.6">Sign in: @vikingcloud.com · Access code VC-QE-2026</p>
+    <p>Loading platform…</p>
   </div>
-  <script>setTimeout(() => { location.href = "https://oliver-peers-trusted-attitude.trycloudflare.com/auth/login.html"; }, 1500);</script>
+  <iframe
+    id="app"
+    src="https://oliver-peers-trusted-attitude.trycloudflare.com/auth/login.html"
+    title="QE Agentic Framework"
+    allow="fullscreen"
+    onload="document.getElementById('loading').style.display='none'"
+  ></iframe>
 </body>
 </html>
