@@ -3,7 +3,7 @@ services:
     name: agenticqaframework
     runtime: node
     rootDir: app
-    buildCommand: echo "ready"
+    buildCommand: echo "build ok"
     startCommand: node server.js
     plan: free
     healthCheckPath: /health
@@ -11,13 +11,13 @@ services:
       - key: HOST
         value: 0.0.0.0
       - key: PORT
-        value: 8080
+        value: 10000
       - key: AUTH_ENABLED
         value: true
       - key: AUTH_MODE
         value: access_code
       - key: ACCESS_CODE
-        sync: false
+        value: VC-QE-2026
       - key: ALLOWED_EMAIL_DOMAINS
         value: vikingcloud.com
       - key: SESSION_SECRET
