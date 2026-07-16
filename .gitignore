@@ -35,5 +35,8 @@ app/video/output/*.mp4
 app/video/output/*.wav
 app/video/output/tmp/
 
-# Presentation outputs (regenerate via presentation/*.ps1)
-presentation/*.pptx
+# Deploy binaries and portable tools
+deploy/cloudflared.exe
+deploy/node-portable/
+deploy/lt/node_modules/
+deploy/node-portable.zip

@@ -393,7 +393,7 @@ const server = http.createServer(async (req, res) => {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   if (req.method === "OPTIONS") { res.writeHead(204); return res.end(); }
 
-  const authResult = auth.authMiddleware(req, res, url);
+  const authResult = await auth.authMiddleware(req, res, url);
   if (authResult.handled) return;
   if (!authResult.ok) return;
 
@@ -700,7 +700,8 @@ server.listen(PORT, HOST, () => {
   const bind = HOST === "0.0.0.0" ? "all interfaces" : HOST;
   console.log(`Agentic QE Platform: http://${HOST === "0.0.0.0" ? "127.0.0.1" : HOST}:${PORT} (${bind})`);
   if (cfg.enabled) {
-    console.log(`Auth: Microsoft Entra ID | domains: ${cfg.allowedDomains.join(", ")}`);
+    const modeLabel = cfg.authMode === "access_code" ? "team access code" : "Microsoft Entra ID";
+    console.log(`Auth: ${modeLabel} | domains: ${cfg.allowedDomains.join(", ")}`);
     console.log(`Public URL: ${cfg.publicBaseUrl}`);
   } else {
     console.log("Auth: disabled (set AUTH_ENABLED=true in .env for production)");

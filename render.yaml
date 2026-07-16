@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: agenticqaframework
+    runtime: docker
+    dockerfilePath: ./deploy/Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 8080
+      - key: AUTH_ENABLED
+        value: true
+      - key: AUTH_MODE
+        value: access_code
+      - key: ACCESS_CODE
+        sync: false
+      - key: ALLOWED_EMAIL_DOMAINS
+        value: vikingcloud.com
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: PUBLIC_BASE_URL
+        value: https://agenticqaframework.onrender.com

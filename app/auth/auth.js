@@ -32,9 +32,11 @@ function getConfig() {
   const port = process.env.PORT || "8080";
   return {
     enabled: process.env.AUTH_ENABLED === "true",
+    authMode: (process.env.AUTH_MODE || "microsoft").toLowerCase(),
     tenantId: process.env.AZURE_TENANT_ID || "",
     clientId: process.env.AZURE_CLIENT_ID || "",
     clientSecret: process.env.AZURE_CLIENT_SECRET || "",
+    accessCode: process.env.ACCESS_CODE || "",
     allowedDomains: (process.env.ALLOWED_EMAIL_DOMAINS || "vikingcloud.com")
       .split(",")
       .map((d) => d.trim().toLowerCase())
@@ -209,9 +211,103 @@ function redirect(res, location) {
   res.end();
 }
 
-function sendLoginPage(res) {
+function sendLoginPage(res, cfg = getConfig()) {
   res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-  res.end(fs.readFileSync(LOGIN_HTML, "utf8"));
+  if (cfg.authMode === "access_code") {
+    res.end(buildAccessCodeLoginHtml(cfg));
+  } else {
+    res.end(fs.readFileSync(LOGIN_HTML, "utf8"));
+  }
+}
+
+function buildAccessCodeLoginHtml(cfg, errorMsg = "") {
+  const domains = cfg.allowedDomains.map((d) => `@${escHtml(d)}`).join(", ");
+  const err = errorMsg ? `<div class="err">${escHtml(errorMsg)}</div>` : "";
+  return `<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Sign in | QE Agentic Framework VikingCloud</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;font-family:Inter,Segoe UI,sans-serif;background:linear-gradient(135deg,#0a1628,#1d3c83 55%,#23569a);display:flex;align-items:center;justify-content:center;color:#fff;padding:24px}
+.card{width:100%;max-width:440px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:40px 36px;box-shadow:0 24px 48px rgba(0,0,0,.25)}
+.brand{font-family:Poppins,sans-serif;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#66fcf9;margin-bottom:8px}
+h1{font-family:Poppins,sans-serif;font-size:28px;margin-bottom:8px}
+p{color:rgba(255,255,255,.75);font-size:14px;line-height:1.6;margin-bottom:20px}
+label{display:block;font-size:12px;color:rgba(255,255,255,.6);margin-bottom:6px}
+input{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,.2);border-radius:8px;background:rgba(0,0,0,.2);color:#fff;font-size:14px;margin-bottom:16px}
+input:focus{outline:2px solid #66fcf9;border-color:transparent}
+.btn{width:100%;padding:14px;border:none;border-radius:10px;background:#fff;color:#1d3c83;font-size:15px;font-weight:600;cursor:pointer}
+.btn:hover{box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.note{margin-top:20px;font-size:12px;color:rgba(255,255,255,.5);text-align:center;line-height:1.5}
+.err{background:rgba(204,36,21,.25);border:1px solid rgba(204,36,21,.5);padding:10px 12px;border-radius:8px;font-size:13px;margin-bottom:16px}
+</style></head><body>
+<div class="card">
+  <div class="brand">VikingCloud</div>
+  <h1>QE Agentic Framework</h1>
+  <p>Enter your VikingCloud email and the team access code.</p>
+  ${err}
+  <form method="POST" action="/auth/login">
+    <label for="email">Work email (${domains})</label>
+    <input id="email" name="email" type="email" required placeholder="you.name@vikingcloud.com"/>
+    <label for="access_code">Team access code</label>
+    <input id="access_code" name="access_code" type="password" required autocomplete="current-password"/>
+    <button class="btn" type="submit">Sign in</button>
+  </form>
+  <p class="note">Access restricted to VikingCloud accounts.<br/>Contact QE Engineering for the access code.</p>
+</div></body></html>`;
+}
+
+function readBody(req) {
+  return new Promise((resolve, reject) => {
+    let buf = "";
+    req.on("data", (c) => (buf += c));
+    req.on("end", () => {
+      try {
+        if (!buf) return resolve({});
+        const ct = req.headers["content-type"] || "";
+        if (ct.includes("application/json")) {
+          resolve(JSON.parse(buf));
+        } else {
+          resolve(Object.fromEntries(new URLSearchParams(buf)));
+        }
+      } catch {
+        reject(new Error("Invalid request body"));
+      }
+    });
+    req.on("error", reject);
+  });
+}
+
+function safeEqual(a, b) {
+  if (typeof a !== "string" || typeof b !== "string") return false;
+  const aa = Buffer.from(a);
+  const bb = Buffer.from(b);
+  if (aa.length !== bb.length) return false;
+  return crypto.timingSafeEqual(aa, bb);
+}
+
+async function handleAccessCodeLogin(req, res, cfg = getConfig()) {
+  if (!cfg.accessCode) {
+    res.writeHead(503, { "Content-Type": "text/html; charset=utf-8" });
+    return res.end("<h1>Access code not configured</h1><p>Set ACCESS_CODE in app/.env</p>");
+  }
+  try {
+    const body = await readBody(req);
+    const email = String(body.email || "").trim().toLowerCase();
+    const code = String(body.access_code || body.accessCode || "");
+    if (!isAllowedEmail(email, cfg) || !safeEqual(code, cfg.accessCode)) {
+      res.writeHead(401, { "Content-Type": "text/html; charset=utf-8" });
+      return res.end(buildAccessCodeLoginHtml(cfg, "Invalid email or access code."));
+    }
+    const name = email.split("@")[0].replace(/\./g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    setSessionCookie(res, { email, name, sub: email }, cfg);
+    redirect(res, "/");
+  } catch (e) {
+    res.writeHead(400, { "Content-Type": "text/html; charset=utf-8" });
+    res.end(`<h1>Sign-in error</h1><p>${escHtml(e.message)}</p>`);
+  }
 }
 
 function startMicrosoftLogin(res, cfg = getConfig()) {
@@ -286,7 +382,7 @@ function escHtml(s) {
   return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-function authMiddleware(req, res, url) {
+async function authMiddleware(req, res, url) {
   const cfg = getConfig();
   const pathname = url.pathname;
 
@@ -295,8 +391,10 @@ function authMiddleware(req, res, url) {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify({
       authRequired: cfg.enabled,
+      authMode: cfg.authMode,
       authenticated: cfg.enabled ? !!session : true,
       azureConfigured: isAzureConfigured(cfg),
+      accessCodeConfigured: cfg.authMode === "access_code" && !!cfg.accessCode,
       allowedDomains: cfg.allowedDomains,
       user: session ? { email: session.email, name: session.name } : null,
     }));
@@ -308,10 +406,14 @@ function authMiddleware(req, res, url) {
   const session = getSession(req);
 
   if (pathname === "/auth/login.html" || pathname === "/login.html") {
-    sendLoginPage(res);
+    sendLoginPage(res, cfg);
     return { handled: true };
   }
-  if (pathname === "/auth/start" && req.method === "GET") {
+  if (pathname === "/auth/login" && req.method === "POST" && cfg.authMode === "access_code") {
+    await handleAccessCodeLogin(req, res, cfg);
+    return { handled: true };
+  }
+  if (pathname === "/auth/start" && req.method === "GET" && cfg.authMode === "microsoft") {
     startMicrosoftLogin(res, cfg);
     return { handled: true };
   }

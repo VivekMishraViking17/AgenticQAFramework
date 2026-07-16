@@ -1,0 +1,12 @@
+# Cloudflare named tunnel — custom domain: qeagenticframeworkvikingcloud.com
+# Used after: cloudflared tunnel login && cloudflared tunnel create qe-agentic-vc
+
+tunnel: qe-agentic-vc
+credentials-file: C:\Users\VivekMishra\.cloudflared\qe-agentic-vc.json
+
+ingress:
+  - hostname: qeagenticframeworkvikingcloud.com
+    service: http://127.0.0.1:8080
+  - hostname: www.qeagenticframeworkvikingcloud.com
+    service: http://127.0.0.1:8080
+  - service: http_status:404
