@@ -41,3 +41,8 @@ deploy/.render-api-key
 deploy/node-portable/
 deploy/lt/node_modules/
 deploy/node-portable.zip
+deploy/gh.zip
+deploy/bin/
+deploy/lt-url.txt
+deploy/tunnel.log
+deploy/tunnel.err.log
