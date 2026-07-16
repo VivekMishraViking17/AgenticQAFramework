@@ -1,24 +1,29 @@
 # AgenticQAFramework — VikingCloud URL
 
-## Live app (GitHub Pages)
+## USE THIS NOW (works today)
 
-**https://vikingcloud.github.io/VikingCloudQA/**
+**https://vivekmishraviking17.github.io/AgenticQAFramework/**
 
-Login: `@vikingcloud.com` + `VC-QE-2026`
+Full app (no GitHub): **https://oliver-peers-trusted-attitude.trycloudflare.com/auth/login.html**
 
-Repo: https://github.com/VikingCloud/VikingCloudQA
+Login: `@vikingcloud.com` + `VC-QE-2026` (keep PC on)
 
 ---
 
-## Backend (your PC must stay on)
+## Target (needs Pages enabled once)
+
+**https://vikingcloud.github.io/VikingCloudQA/**
+
+Repo: https://github.com/VikingCloud/VikingCloudQA  
+Status: code deployed to `gh-pages` branch — **Pages not enabled yet** (404)
+
+Run: `powershell -ExecutionPolicy Bypass -File deploy\ENABLE-VIKINGCLOUD-PAGES.ps1`
+
+---
+
+## Backend
 
 API: **https://oliver-peers-trusted-attitude.trycloudflare.com**
 
 Auto-sync after tunnel restart:
 `powershell -ExecutionPolicy Bypass -File deploy\auto-sync-public.ps1`
-
----
-
-## Fallback (personal GitHub)
-
-**https://vivekmishraviking17.github.io/AgenticQAFramework/**
