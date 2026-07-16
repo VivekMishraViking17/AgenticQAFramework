@@ -384,6 +384,7 @@ function readBody(req) {
 const MIME = { ".html": "text/html", ".css": "text/css", ".js": "application/javascript", ".json": "application/json", ".ico": "image/x-icon" };
 
 const CORS_ORIGINS = [
+  "https://vikingcloud.github.io",
   "https://vivekmishraviking17.github.io",
   ...(process.env.CORS_ORIGINS || "").split(",").map((s) => s.trim()).filter(Boolean),
 ];
