@@ -1,9 +1,10 @@
 services:
   - type: web
     name: agenticqaframework
-    runtime: docker
-    dockerfilePath: ./deploy/Dockerfile
-    dockerContext: .
+    runtime: node
+    rootDir: app
+    buildCommand: echo "ready"
+    startCommand: node server.js
     plan: free
     healthCheckPath: /health
     envVars:
