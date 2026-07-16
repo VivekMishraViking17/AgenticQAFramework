@@ -1,26 +1,29 @@
-# AgenticQAFramework — Live URLs
+# Branded URL: QE Agentic Framework
 
-## GitHub repo
+## Your branded link (GitHub Pages)
 
-https://github.com/VivekMishraViking17/AgenticQAFramework
+**https://vivekmishraviking17.github.io/AgenticQAFramework/**
+
+Contains **AgenticQAFramework** in the URL. Opens the live QE platform.
+
+### One-time enable (30 seconds)
+
+1. Open https://github.com/VivekMishraViking17/AgenticQAFramework/settings/pages
+2. **Build and deployment** → Source: **GitHub Actions**
+3. Wait ~2 min after push for workflow to finish
 
 ---
 
-## Branded URL (deploy on Render — free)
+## Direct app login
 
-**https://agenticqaframework.onrender.com**
-
-1. Open https://dashboard.render.com/select-repo?type=blueprint
-2. Connect GitHub → select **AgenticQAFramework**
-3. Set `ACCESS_CODE` = `VC-QE-2026`
-4. Deploy (takes ~5 min first time)
+**https://oliver-peers-trusted-attitude.trycloudflare.com/auth/login.html**
 
 Sign in: `@vikingcloud.com` + `VC-QE-2026`
 
 ---
 
-## Temporary URL (your PC, until Render is live)
+## Permanent cloud URL (when Render is deployed)
 
-**https://low-feelings-preston-railway.trycloudflare.com**
+**https://agenticqaframework.onrender.com**
 
-Same sign-in. Keep PC on.
+Deploy: https://dashboard.render.com/blueprint/new → select AgenticQAFramework → Apply

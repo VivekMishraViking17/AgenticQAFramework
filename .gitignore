@@ -37,6 +37,7 @@ app/video/output/tmp/
 
 # Deploy binaries and portable tools
 deploy/cloudflared.exe
+deploy/.render-api-key
 deploy/node-portable/
 deploy/lt/node_modules/
 deploy/node-portable.zip
